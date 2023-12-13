@@ -1,0 +1,5 @@
+- name: Identify the Linux distribution
+  ansible.builtin.setup: { gather_subset: [distribution] }
+- name: Include tasks specific to the distribution
+  ansible.builtin.include_tasks:
+    file: "{{ ansible_distribution }}.yaml"

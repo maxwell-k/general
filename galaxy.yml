@@ -1,0 +1,13 @@
+namespace: maxwellk
+name: general
+version: 0.0.1
+readme: README.md
+authors: [Keith Maxwell <keith.maxwell@gmail.com>]
+description: An Ansible collection for Linux system administration.
+license: [MPL-2.0]
+tags: []
+dependencies: {}
+repository: https://github.com/maxwell-k/general
+# documentation: http://docs.example.com
+# homepage: http://example.com
+issues: https://github.com/maxwell-k/general/issues
