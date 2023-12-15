@@ -1,2 +1,3 @@
 dependencies:
+  - role: maxwellk.general.python311
   - role: maxwellk.general.pipx
