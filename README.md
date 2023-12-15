@@ -15,9 +15,23 @@ trash-put ~/.ansible/collections \
 
 ## Example usage
 
-Command to apply this role to a LXD container:
+Each section includes a command to launch a new LXD container and apply a role.
 
-_Fedora 39_
+<!-- toc -->
+
+- [Fedora 39](#fedora-39)
+  - [python311](#python311)
+  - [pipx](#pipx)
+  - [nox](#nox)
+- [Ubuntu 22.04](#ubuntu-2204)
+  - [pipx](#pipx-1)
+  - [nox](#nox-1)
+
+<!-- tocstop -->
+
+### Fedora 39
+
+#### python311
 
     lxc launch images:fedora/39/cloud c1 \
     && ansible \
@@ -27,6 +41,8 @@ _Fedora 39_
         --args=name=maxwellk.general.python311 \
         all
 
+#### pipx
+
     lxc launch images:fedora/39/cloud c1 \
     && ansible \
         --inventory=c1, \
@@ -34,6 +50,8 @@ _Fedora 39_
         --module-name=include_role
         --args=name=maxwellk.general.pipx \
         all
+
+#### nox
 
     lxc launch images:fedora/39/cloud c1 \
     && ansible \
@@ -43,7 +61,9 @@ _Fedora 39_
         --args=name=maxwellk.general.nox \
         all
 
-_Ubuntu 22.04_
+### Ubuntu 22.04
+
+#### pipx
 
     lxc launch ubuntu:22.04 c1 \
     && ansible \
@@ -66,4 +86,4 @@ Copyright 2023 Keith Maxwell
 SPDX-License-Identifier: CC0-1.0
 -->
 
-<!-- vim: set filetype=markdown.htmlCommentNoSpell  : -->
+<!-- vim: set filetype=markdown.htmlCommentNoSpell.markdown-toc  : -->
