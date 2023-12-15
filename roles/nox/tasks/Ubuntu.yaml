@@ -1,0 +1,7 @@
+- name: Install latest nox with pipx
+  community.general.pipx:
+    name: nox
+    executable: /usr/local/bin/pipx
+    python: python3.11
+  environment: "{{ nox_environment }}"
+  become: true

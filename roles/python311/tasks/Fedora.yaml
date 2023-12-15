@@ -1,4 +1,4 @@
-- name: Install Python 3.11 with DNF
+- name: Install Python 3.11
   ansible.builtin.package:
     name: python3.11
     state: present
