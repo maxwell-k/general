@@ -73,6 +73,16 @@ Each section includes a command to launch a new LXD container and apply a role.
         --args=name=maxwellk.general.pipx \
         all
 
+#### nox
+
+    lxc launch ubuntu:22.04 c1 \
+    && ansible \
+        --inventory=c1, \
+        --connection=community.general.lxd \
+        --module-name=include_role
+        --args=name=maxwellk.general.nox \
+        all
+
 <!-- Clean up:
 
 lxc delete --force c1 \

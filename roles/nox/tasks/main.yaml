@@ -1,5 +1,6 @@
-- name: Identify the Linux distribution
-  ansible.builtin.setup: { gather_subset: [distribution] }
-- name: Include tasks specific to the distribution
-  ansible.builtin.include_tasks:
-    file: "{{ ansible_distribution }}.yaml"
+- name: Install latest nox with pipx
+  community.general.pipx:
+    name: nox
+  environment:
+    PIPX_HOME: /opt/pipx
+    PIPX_BIN_DIR: /usr/local/bin
