@@ -3,13 +3,16 @@
 - name: Update the apt cache
   ansible.builtin.apt: { update_cache: true }
   when: ansible_distribution == "Ubuntu"
+  become: true
 - name: Install pipx with the system package manager
   ansible.builtin.package:
     name: pipx
     state: present
+  become: true
 - name: Install the latest pipx with pipx
   community.general.pipx:
     name: pipx
   environment:
     PIPX_HOME: /opt/pipx
     PIPX_BIN_DIR: /usr/local/bin
+  become: true
