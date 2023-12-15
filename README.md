@@ -6,9 +6,11 @@ Command to install this collection:
 
     ansible-galaxy collection install git+https://github.com/maxwell-k/general.git
 
-<!--
+<!-- Install from within a local clone:
+
 trash-put ~/.ansible/collections \
 ; ansible-galaxy collection install --upgrade git+file://$PWD
+
 -->
 
 ## Example usage
@@ -33,7 +35,15 @@ _Fedora 39_
         --args=name=maxwellk.general.pipx \
         all
 
-<!-- Clean up
+    lxc launch images:fedora/39/cloud c1 \
+    && ansible \
+        --inventory=c1, \
+        --connection=community.general.lxd \
+        --module-name=include_role
+        --args=name=maxwellk.general.nox \
+        all
+
+<!-- Clean up:
 
 lxc delete --force c1 \
 && ssh-keygen -R c1.lxd

@@ -1,0 +1,6 @@
+- name: Install latest nox with pipx
+  community.general.pipx:
+    name: nox
+  environment:
+    PIPX_HOME: /opt/pipx
+    PIPX_BIN_DIR: /usr/local/bin
