@@ -1,0 +1,9 @@
+- name: Add the deadsnakes PPA
+  ansible.builtin.apt_repository: { repo: ppa:deadsnakes/ppa }
+  become: true
+  notify: Update the apt cache
+- name: Run handlers
+  ansible.builtin.meta: flush_handlers
+- name: Install Python
+  ansible.builtin.apt: { name: python3.11-venv }
+  become: true
