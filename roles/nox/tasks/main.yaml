@@ -3,7 +3,5 @@
     name: nox
     executable: /usr/local/bin/pipx
     python: "3.11"
-  environment:
-    PIPX_HOME: /opt/pipx
-    PIPX_BIN_DIR: /usr/local/bin
+  environment: "{{ nox_environment }}"
   become: true
