@@ -1,9 +1,4 @@
-- name: Identify the Linux distribution
-  ansible.builtin.setup: { gather_subset: [distribution] }
-- name: Update the apt cache
-  ansible.builtin.apt: { update_cache: true }
-  when: ansible_distribution == "Ubuntu"
-  become: true
+# on Ubuntu assumes that the apt cache was updated previously, e.g. in python311
 - name: Install pipx with the system package manager
   ansible.builtin.package:
     name: pipx
