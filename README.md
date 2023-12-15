@@ -24,6 +24,7 @@ Each section includes a command to launch a new LXD container and apply a role.
   - [pipx](#pipx)
   - [nox](#nox)
 - [Ubuntu 22.04](#ubuntu-2204)
+  - [python311](#python311-1)
   - [pipx](#pipx-1)
   - [nox](#nox-1)
 
@@ -62,6 +63,16 @@ Each section includes a command to launch a new LXD container and apply a role.
         all
 
 ### Ubuntu 22.04
+
+#### python311
+
+    lxc launch ubuntu:22.04 c1 \
+    && ansible \
+        --inventory=c1, \
+        --connection=community.general.lxd \
+        --module-name=include_role
+        --args=name=maxwellk.general.python311 \
+        all
 
 #### pipx
 
