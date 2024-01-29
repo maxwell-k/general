@@ -38,7 +38,7 @@ Each section includes a command to launch a new LXD container and apply a role.
     && ansible \
         --inventory=c1, \
         --connection=community.general.lxd \
-        --module-name=include_role
+        --module-name=include_role \
         --args=name=maxwellk.general.python311 \
         all
 
@@ -48,7 +48,7 @@ Each section includes a command to launch a new LXD container and apply a role.
     && ansible \
         --inventory=c1, \
         --connection=community.general.lxd \
-        --module-name=include_role
+        --module-name=include_role \
         --args=name=maxwellk.general.pipx \
         all
 
@@ -58,7 +58,7 @@ Each section includes a command to launch a new LXD container and apply a role.
     && ansible \
         --inventory=c1, \
         --connection=community.general.lxd \
-        --module-name=include_role
+        --module-name=include_role \
         --args=name=maxwellk.general.nox \
         all
 
@@ -70,7 +70,7 @@ Each section includes a command to launch a new LXD container and apply a role.
     && ansible \
         --inventory=c1, \
         --connection=community.general.lxd \
-        --module-name=include_role
+        --module-name=include_role \
         --args=name=maxwellk.general.python311 \
         all
 
@@ -80,7 +80,7 @@ Each section includes a command to launch a new LXD container and apply a role.
     && ansible \
         --inventory=c1, \
         --connection=community.general.lxd \
-        --module-name=include_role
+        --module-name=include_role \
         --args=name=maxwellk.general.pipx \
         all
 
@@ -90,7 +90,7 @@ Each section includes a command to launch a new LXD container and apply a role.
     && ansible \
         --inventory=c1, \
         --connection=community.general.lxd \
-        --module-name=include_role
+        --module-name=include_role \
         --args=name=maxwellk.general.nox \
         all
 
