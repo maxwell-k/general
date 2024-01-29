@@ -13,6 +13,7 @@ Copyright: 2023 Keith Maxwell
 License: CC0-1.0
 
 Files:
+  roles/*/defaults/*.yaml
   roles/*/handlers/*.yaml
   roles/*/meta/*.yaml
   roles/*/tasks/*.yaml
