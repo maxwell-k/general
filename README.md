@@ -8,8 +8,8 @@ Command to install this collection:
 
 <!-- Install from within a local clone:
 
-trash-put ~/.ansible/collections \
-; ansible-galaxy collection install --upgrade git+file://$PWD
+trash ~/.ansible/collections \
+; ansible-galaxy collection install git+file://$PWD
 
 -->
 
