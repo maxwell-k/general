@@ -17,3 +17,4 @@ jobs:
       - run: >-
           git ls-files '*.md'
           | xargs npm exec prettier -- --check --prose-wrap always
+      - run: git ls-files '*.json' | xargs -I{} sh -c "jq . {} | cmp {} -"
