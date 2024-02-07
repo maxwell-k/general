@@ -20,7 +20,8 @@ to upgrade to a more recent version of the `community.general` collection:
 
     ansible-galaxy collection install community.general --upgrade
 
-[in 2024]: https://discuss.linuxcontainers.org/t/important-notice-for-lxd-users-image-server/18479
+[in 2024]:
+  https://discuss.linuxcontainers.org/t/important-notice-for-lxd-users-image-server/18479
 [Incus]: https://github.com/lxc/incus
 
 ## Example usage
