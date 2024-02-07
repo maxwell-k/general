@@ -2,16 +2,19 @@
 
 An Ansible collection for Linux system administration.
 
-Command to install this collection:
+Command to install this collection from GitHub:
 
     ansible-galaxy collection install git+https://github.com/maxwell-k/general.git
 
-<!-- Install from within a local clone:
+Command to install this collection from a local clone:
 
-trash ~/.ansible/collections \
-; ansible-galaxy collection install git+file://$PWD
-
+<!--
+trash ~/.ansible/collections
 -->
+
+```sh
+ansible-galaxy collection install git+file://$PWD
+```
 
 Originally this collection used LXD, however [in 2024] LXD lost access to
 images, like Fedora from the Linux Containers project. Instead the collection
