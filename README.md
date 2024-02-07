@@ -82,13 +82,17 @@ Each section includes a command to launch a new LXD container and apply a role.
 
 #### python311
 
-    lxc launch ubuntu:22.04 c1 \
-    && ansible \
-        --inventory=c1, \
-        --connection=community.general.lxd \
-        --module-name=include_role \
-        --args=name=maxwellk.general.python311 \
-        all
+<!-- embedme .README.md-files/ubuntu-pyhton311.sh -->
+
+```sh
+lxc launch ubuntu:22.04 c1 \
+&& ansible \
+    --inventory=c1, \
+    --connection=community.general.lxd \
+    --module-name=include_role \
+    --args=name=maxwellk.general.python311 \
+    all
+```
 
 #### pipx
 

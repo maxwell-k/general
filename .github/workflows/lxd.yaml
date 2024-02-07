@@ -14,3 +14,5 @@ jobs:
       - uses: actions/checkout@v3
       - uses: canonical/setup-lxd@v0.1.1
       - run: . .README.md-files/install-pwd.sh
+      - run: . .README.md-files/ubuntu-pyhton311.sh
+      - run: lxc delete --force c1
