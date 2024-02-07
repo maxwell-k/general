@@ -96,23 +96,31 @@ lxc launch ubuntu:22.04 c1 \
 
 #### pipx
 
-    lxc launch ubuntu:22.04 c1 \
-    && ansible \
-        --inventory=c1, \
-        --connection=community.general.lxd \
-        --module-name=include_role \
-        --args=name=maxwellk.general.pipx \
-        all
+<!-- embedme .README.md-files/ubuntu-pipx.sh -->
+
+```sh
+lxc launch ubuntu:22.04 c1 \
+&& ansible \
+    --inventory=c1, \
+    --connection=community.general.lxd \
+    --module-name=include_role \
+    --args=name=maxwellk.general.pipx \
+    all
+```
 
 #### nox
 
-    lxc launch ubuntu:22.04 c1 \
-    && ansible \
-        --inventory=c1, \
-        --connection=community.general.lxd \
-        --module-name=include_role \
-        --args=name=maxwellk.general.nox \
-        all
+<!-- embedme .README.md-files/ubuntu-nox.sh -->
+
+```sh
+lxc launch ubuntu:22.04 c1 \
+&& ansible \
+    --inventory=c1, \
+    --connection=community.general.lxd \
+    --module-name=include_role \
+    --args=name=maxwellk.general.nox \
+    all
+```
 
 <!-- Clean up:
 

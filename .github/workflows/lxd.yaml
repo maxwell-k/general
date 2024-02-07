@@ -16,3 +16,7 @@ jobs:
       - run: . .README.md-files/install-pwd.sh
       - run: . .README.md-files/ubuntu-pyhton311.sh
       - run: lxc delete --force c1
+      - run: . .README.md-files/ubuntu-pipx.sh
+      - run: lxc delete --force c1
+      - run: . .README.md-files/ubuntu-nox.sh
+      - run: lxc delete --force c1
