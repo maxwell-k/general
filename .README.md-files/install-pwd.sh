@@ -1,0 +1,1 @@
+ansible-galaxy collection install "git+file://$PWD"

@@ -12,8 +12,10 @@ Command to install this collection from a local clone:
 trash ~/.ansible/collections
 -->
 
+<!-- embedme .README.md-files/install-pwd.sh -->
+
 ```sh
-ansible-galaxy collection install git+file://$PWD
+ansible-galaxy collection install "git+file://$PWD"
 ```
 
 Originally this collection used LXD, however [in 2024] LXD lost access to
@@ -121,4 +123,4 @@ Copyright 2023 Keith Maxwell
 SPDX-License-Identifier: CC0-1.0
 -->
 
-<!-- vim: set filetype=markdown.htmlCommentNoSpell.markdown-toc  : -->
+<!-- vim: set filetype=markdown.htmlCommentNoSpell.markdown-toc.embedme  : -->
