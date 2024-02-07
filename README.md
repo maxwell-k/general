@@ -13,6 +13,16 @@ trash ~/.ansible/collections \
 
 -->
 
+Originally this collection used LXD, however [in 2024] LXD lost access to
+images, like Fedora from the Linux Containers project. Instead the collection
+uses a combination of [Incus] and LXD. To work with Incus, it may be necessary
+to upgrade to a more recent version of the `community.general` collection:
+
+    ansible-galaxy collection install community.general --upgrade
+
+[in 2024]: https://discuss.linuxcontainers.org/t/important-notice-for-lxd-users-image-server/18479
+[Incus]: https://github.com/lxc/incus
+
 ## Example usage
 
 Each section includes a command to launch a new LXD container and apply a role.
@@ -34,30 +44,30 @@ Each section includes a command to launch a new LXD container and apply a role.
 
 #### python311
 
-    lxc launch images:fedora/39/cloud c1 \
+    incus launch images:fedora/39/cloud c1 \
     && ansible \
         --inventory=c1, \
-        --connection=community.general.lxd \
+        --connection=community.general.incus \
         --module-name=include_role \
         --args=name=maxwellk.general.python311 \
         all
 
 #### pipx
 
-    lxc launch images:fedora/39/cloud c1 \
+    incus launch images:fedora/39/cloud c1 \
     && ansible \
         --inventory=c1, \
-        --connection=community.general.lxd \
+        --connection=community.general.incus \
         --module-name=include_role \
         --args=name=maxwellk.general.pipx \
         all
 
 #### nox
 
-    lxc launch images:fedora/39/cloud c1 \
+    incus launch images:fedora/39/cloud c1 \
     && ansible \
         --inventory=c1, \
-        --connection=community.general.lxd \
+        --connection=community.general.incus \
         --module-name=include_role \
         --args=name=maxwellk.general.nox \
         all
