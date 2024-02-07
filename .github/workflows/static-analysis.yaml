@@ -12,7 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # linters
       - uses: fsfe/reuse-action@v2
+      - run: yamllint .
+      # formatters
       - run: git ls-files '*.yaml' '*.yml' | xargs npm exec prettier -- --check
       - run: >-
           git ls-files '*.md'
