@@ -15,8 +15,15 @@ jobs:
       - uses: canonical/setup-lxd@v0.1.1
       - run: . .README.md-files/install-pwd.sh
       - run: . .README.md-files/ubuntu-pyhton311.sh
+      - run: lxc exec c1 -- python3.11 --version
       - run: lxc delete --force c1
       - run: . .README.md-files/ubuntu-pipx.sh
+      - run: lxc exec c1 -- pipx --version
       - run: lxc delete --force c1
       - run: . .README.md-files/ubuntu-nox.sh
+      - run: lxc exec c1 -- nox --version
+      - run: >-
+          lxc exec c1
+          --env PIPX_BIN_DIR=/usr/local/bin --env PIPX_HOME=/opt/pipx
+          -- pipx list
       - run: lxc delete --force c1
