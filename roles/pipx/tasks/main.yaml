@@ -1,3 +1,5 @@
+- name: Identify the Linux distribution
+  ansible.builtin.setup: { gather_subset: [distribution] }
 # assumes that the apt cache was updated previously, e.g. in python311
 - name: On Ubuntu install the python3-venv package
   ansible.builtin.package:
