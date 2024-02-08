@@ -1,7 +1,7 @@
 # Ansible Collection - maxwellk.general
 
-An Ansible collection for Linux system administration on Ubuntu 22.04 and Fedora
-39.
+An Ansible collection for Linux system administration on Ubuntu 22.04 and
+Fedora 39.
 
 Command to install this collection from GitHub:
 
