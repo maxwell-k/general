@@ -1,10 +1,10 @@
 - name: Identify the Linux distribution
   ansible.builtin.setup: { gather_subset: [distribution] }
-# assumes that the apt cache was updated previously, e.g. in python311
 - name: On Ubuntu install the python3-venv package
-  ansible.builtin.package:
+  ansible.builtin.apt:
     name: python3-venv
     state: present
+    update_cache: true
   become: true
   when: ansible_distribution == 'Ubuntu'
 - name: Download pipx zipapp to /usr/local/bin/
