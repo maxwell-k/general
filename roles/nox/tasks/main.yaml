@@ -1,4 +1,8 @@
-# ansible_distribution should be set by python311 dependency
-- name: Include tasks specific to the distribution
-  ansible.builtin.include_tasks:
-    file: "{{ ansible_distribution }}.yaml"
+- name: Install latest nox with pipx
+  community.general.pipx:
+    name: nox
+    executable: /usr/local/bin/pipx
+    python: |-
+      {{ '/usr/bin/python3.11' if ansible_distribution == 'Ubuntu' else omit }}
+  environment: "{{ nox_environment }}"
+  become: true
