@@ -1,13 +1,15 @@
-# on Ubuntu assumes that the apt cache was updated previously, e.g. in python311
-- name: Install pipx with the system package manager
+# assumes that the apt cache was updated previously, e.g. in python311
+- name: On Ubuntu install the python3-venv package
   ansible.builtin.package:
-    name: pipx
+    name: python3-venv
     state: present
   become: true
-- name: Install the latest pipx with pipx
-  community.general.pipx:
-    name: pipx
-  environment:
-    PIPX_HOME: /opt/pipx
-    PIPX_BIN_DIR: /usr/local/bin
+  when: ansible_distribution == 'Ubuntu'
+- name: Download pipx zipapp to /usr/local/bin/
+  ansible.builtin.get_url:
+    url: https://github.com/pypa/pipx/releases/download/1.4.3/pipx.pyz
+    dest: /usr/local/bin/pipx
+    mode: "0755"
+    owner: root
+    group: root
   become: true
