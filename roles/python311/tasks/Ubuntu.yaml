@@ -1,7 +1,19 @@
-- name: Add the deadsnakes PPA
-  ansible.builtin.apt_repository: { repo: ppa:deadsnakes/ppa }
+- name: Deadsnakes GPG key
+  ansible.builtin.get_url:
+    url: |-
+      https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf23c5a6cf475977595c89f51ba6932366a755776
+    dest: /etc/apt/keyrings/deadsnakes.asc
+    mode: 0o644
   become: true
+- name: Deadsnakes repository
+  ansible.builtin.apt_repository:
+    repo: >-
+      deb [arch=amd64 signed-by=/etc/apt/keyrings/deadsnakes.asc]
+      https://ppa.launchpadcontent.net/deadsnakes/ppa/ubuntu
+      {{ ansible_distribution_release }} main
+    state: present
   notify: Update the apt cache
+  become: true
 - name: Run handlers
   ansible.builtin.meta: flush_handlers
 - name: Install Python
