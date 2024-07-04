@@ -1,7 +1,7 @@
 # Ansible Collection - maxwellk.general
 
 An Ansible collection for Linux system administration on Ubuntu 22.04 and
-Fedora 39.
+Fedora 40.
 
 Command to install this collection from GitHub:
 
@@ -36,7 +36,7 @@ Each section includes a command to launch a new LXD container and apply a role.
 
 <!-- toc -->
 
-- [Fedora 39](#fedora-39)
+- [Fedora 40](#fedora-40)
   - [python311](#python311)
   - [pipx](#pipx)
   - [nox](#nox)
@@ -47,46 +47,62 @@ Each section includes a command to launch a new LXD container and apply a role.
 
 <!-- tocstop -->
 
-### Fedora 39
+### Fedora 40
 
 #### python311
 
-    incus launch images:fedora/39/cloud c1 \
-    && ansible \
-        --inventory=c1, \
-        --connection=community.general.incus \
-        --module-name=include_role \
-        --args=name=maxwellk.general.python311 \
-        all
+<!-- embedme .README.md-files/fedora-python311.sh -->
+
+```sh
+incus launch images:fedora/40/cloud c1 \
+&& incus exec c1 -- cloud-init status --wait \
+&& ansible \
+    --inventory=c1, \
+    --connection=community.general.incus \
+    --module-name=include_role \
+    --args=name=maxwellk.general.python311 \
+    all
+```
 
 #### pipx
 
-    incus launch images:fedora/39/cloud c1 \
-    && ansible \
-        --inventory=c1, \
-        --connection=community.general.incus \
-        --module-name=include_role \
-        --args=name=maxwellk.general.pipx \
-        all
+<!-- embedme .README.md-files/fedora-pipx.sh -->
+
+```sh
+incus launch images:fedora/40/cloud c1 \
+&& incus exec c1 -- cloud-init status --wait \
+&& ansible \
+    --inventory=c1, \
+    --connection=community.general.incus \
+    --module-name=include_role \
+    --args=name=maxwellk.general.pipx \
+    all
+```
 
 #### nox
 
-    incus launch images:fedora/39/cloud c1 \
-    && ansible \
-        --inventory=c1, \
-        --connection=community.general.incus \
-        --module-name=include_role \
-        --args=name=maxwellk.general.nox \
-        all
+<!-- embedme .README.md-files/fedora-nox.sh -->
+
+```sh
+incus launch images:fedora/40/cloud c1 \
+&& incus exec c1 -- cloud-init status --wait \
+&& ansible \
+    --inventory=c1, \
+    --connection=community.general.incus \
+    --module-name=include_role \
+    --args=name=maxwellk.general.nox \
+    all
+```
 
 ### Ubuntu 22.04
 
 #### python311
 
-<!-- embedme .README.md-files/ubuntu-pyhton311.sh -->
+<!-- embedme .README.md-files/ubuntu-python311.sh -->
 
 ```sh
 lxc launch ubuntu:22.04 c1 \
+&& lxc exec c1 -- cloud-init status --wait \
 && ansible \
     --inventory=c1, \
     --connection=community.general.lxd \
@@ -101,6 +117,7 @@ lxc launch ubuntu:22.04 c1 \
 
 ```sh
 lxc launch ubuntu:22.04 c1 \
+&& lxc exec c1 -- cloud-init status --wait \
 && ansible \
     --inventory=c1, \
     --connection=community.general.lxd \
@@ -115,6 +132,7 @@ lxc launch ubuntu:22.04 c1 \
 
 ```sh
 lxc launch ubuntu:22.04 c1 \
+&& lxc exec c1 -- cloud-init status --wait \
 && ansible \
     --inventory=c1, \
     --connection=community.general.lxd \

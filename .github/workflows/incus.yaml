@@ -1,0 +1,30 @@
+# .github/workflows/incus.yaml
+# Copyright 2024 Keith Maxwell
+# SPDX-License-Identifier: CC0-1.0
+
+on: # yamllint disable-line rule:truthy
+  push: { branches: [main] }
+  pull_request: { branches: [main] }
+  workflow_dispatch:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: maxwell-k/setup-incus@main
+      - run: incus admin init --auto
+      - run: . .README.md-files/install-pwd.sh
+      - run: . .README.md-files/fedora-python311.sh
+      - run: incus exec c1 -- python3.11 --version
+      - run: incus delete --force c1
+      - run: . .README.md-files/fedora-pipx.sh
+      - run: incus exec c1 -- pipx --version
+      - run: incus delete --force c1
+      - run: . .README.md-files/fedora-nox.sh
+      - run: incus exec c1 -- nox --version
+      - run: >-
+          incus exec c1
+          --env PIPX_BIN_DIR=/usr/local/bin --env PIPX_HOME=/opt/pipx
+          -- pipx list
+      - run: incus delete --force c1
