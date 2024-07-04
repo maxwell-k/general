@@ -83,7 +83,7 @@ Each section includes a command to launch a new LXD container and apply a role.
 
 #### python311
 
-<!-- embedme .README.md-files/ubuntu-pyhton311.sh -->
+<!-- embedme .README.md-files/ubuntu-python311.sh -->
 
 ```sh
 lxc launch ubuntu:22.04 c1 \
