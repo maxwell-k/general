@@ -51,33 +51,48 @@ Each section includes a command to launch a new LXD container and apply a role.
 
 #### python311
 
-    incus launch images:fedora/39/cloud c1 \
-    && ansible \
-        --inventory=c1, \
-        --connection=community.general.incus \
-        --module-name=include_role \
-        --args=name=maxwellk.general.python311 \
-        all
+<!-- embedme .README.md-files/fedora-python311.sh -->
+
+```sh
+incus launch images:fedora/39/cloud c1 \
+&& incus exec c1 -- cloud-init status --wait \
+&& ansible \
+    --inventory=c1, \
+    --connection=community.general.incus \
+    --module-name=include_role \
+    --args=name=maxwellk.general.python311 \
+    all
+```
 
 #### pipx
 
-    incus launch images:fedora/39/cloud c1 \
-    && ansible \
-        --inventory=c1, \
-        --connection=community.general.incus \
-        --module-name=include_role \
-        --args=name=maxwellk.general.pipx \
-        all
+<!-- embedme .README.md-files/fedora-pipx.sh -->
+
+```sh
+incus launch images:fedora/39/cloud c1 \
+&& incus exec c1 -- cloud-init status --wait \
+&& ansible \
+    --inventory=c1, \
+    --connection=community.general.incus \
+    --module-name=include_role \
+    --args=name=maxwellk.general.pipx \
+    all
+```
 
 #### nox
 
-    incus launch images:fedora/39/cloud c1 \
-    && ansible \
-        --inventory=c1, \
-        --connection=community.general.incus \
-        --module-name=include_role \
-        --args=name=maxwellk.general.nox \
-        all
+<!-- embedme .README.md-files/fedora-nox.sh -->
+
+```sh
+incus launch images:fedora/39/cloud c1 \
+&& incus exec c1 -- cloud-init status --wait \
+&& ansible \
+    --inventory=c1, \
+    --connection=community.general.incus \
+    --module-name=include_role \
+    --args=name=maxwellk.general.nox \
+    all
+```
 
 ### Ubuntu 22.04
 
