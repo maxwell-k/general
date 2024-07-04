@@ -87,6 +87,7 @@ Each section includes a command to launch a new LXD container and apply a role.
 
 ```sh
 lxc launch ubuntu:22.04 c1 \
+&& lxc exec c1 -- cloud-init status --wait \
 && ansible \
     --inventory=c1, \
     --connection=community.general.lxd \
@@ -101,6 +102,7 @@ lxc launch ubuntu:22.04 c1 \
 
 ```sh
 lxc launch ubuntu:22.04 c1 \
+&& lxc exec c1 -- cloud-init status --wait \
 && ansible \
     --inventory=c1, \
     --connection=community.general.lxd \
@@ -115,6 +117,7 @@ lxc launch ubuntu:22.04 c1 \
 
 ```sh
 lxc launch ubuntu:22.04 c1 \
+&& lxc exec c1 -- cloud-init status --wait \
 && ansible \
     --inventory=c1, \
     --connection=community.general.lxd \
