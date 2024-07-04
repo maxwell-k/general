@@ -1,0 +1,18 @@
+version = 1
+SPDX-PackageName = "general"
+SPDX-PackageSupplier = "Keith Maxwell <keith.maxwell@gmail.com>"
+SPDX-PackageDownloadLocation = "https://github.com/maxwell-k/general"
+
+[[annotations]]
+path = [".README.md-files/**.sh", ".en.utf-8.add", ".gitignore", "galaxy.yml", "meta/runtime.yml", "roles/**/README.md"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2023 Keith Maxwell"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = ["roles/**/defaults/**.yaml", "roles/**/handlers/**.yaml", "roles/**/meta/**.yaml", "roles/**/tasks/**.yaml"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2023 Keith Maxwell"
+SPDX-License-Identifier = "MPL-2.0"
+# SPDX-FileCopyrightText: 2024 Keith Maxwell <keith.maxwell@gmail.com>
+# SPDX-License-Identifier: CC0-1.0
