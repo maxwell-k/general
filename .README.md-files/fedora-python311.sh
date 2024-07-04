@@ -1,4 +1,4 @@
-incus launch images:fedora/39/cloud c1 \
+incus launch images:fedora/40/cloud c1 \
 && incus exec c1 -- cloud-init status --wait \
 && ansible \
     --inventory=c1, \

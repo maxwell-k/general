@@ -1,7 +1,7 @@
 # Ansible Collection - maxwellk.general
 
 An Ansible collection for Linux system administration on Ubuntu 22.04 and
-Fedora 39.
+Fedora 40.
 
 Command to install this collection from GitHub:
 
@@ -36,7 +36,7 @@ Each section includes a command to launch a new LXD container and apply a role.
 
 <!-- toc -->
 
-- [Fedora 39](#fedora-39)
+- [Fedora 40](#fedora-40)
   - [python311](#python311)
   - [pipx](#pipx)
   - [nox](#nox)
@@ -47,14 +47,14 @@ Each section includes a command to launch a new LXD container and apply a role.
 
 <!-- tocstop -->
 
-### Fedora 39
+### Fedora 40
 
 #### python311
 
 <!-- embedme .README.md-files/fedora-python311.sh -->
 
 ```sh
-incus launch images:fedora/39/cloud c1 \
+incus launch images:fedora/40/cloud c1 \
 && incus exec c1 -- cloud-init status --wait \
 && ansible \
     --inventory=c1, \
@@ -69,7 +69,7 @@ incus launch images:fedora/39/cloud c1 \
 <!-- embedme .README.md-files/fedora-pipx.sh -->
 
 ```sh
-incus launch images:fedora/39/cloud c1 \
+incus launch images:fedora/40/cloud c1 \
 && incus exec c1 -- cloud-init status --wait \
 && ansible \
     --inventory=c1, \
@@ -84,7 +84,7 @@ incus launch images:fedora/39/cloud c1 \
 <!-- embedme .README.md-files/fedora-nox.sh -->
 
 ```sh
-incus launch images:fedora/39/cloud c1 \
+incus launch images:fedora/40/cloud c1 \
 && incus exec c1 -- cloud-init status --wait \
 && ansible \
     --inventory=c1, \
