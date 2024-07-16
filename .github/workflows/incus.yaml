@@ -13,7 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: maxwell-k/setup-incus@main
-      - run: incus admin init --auto
       - run: . .README.md-files/install-pwd.sh
       - run: . .README.md-files/fedora-python311.sh
       - run: incus exec c1 -- python3.11 --version
