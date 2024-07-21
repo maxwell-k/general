@@ -6,8 +6,8 @@ extends: default
 
 # to be compatible with prettier
 rules:
-  document-start: disable
-  comments:
-    min-spaces-from-content: 1
   braces:
     max-spaces-inside: 1
+  comments:
+    min-spaces-from-content: 1
+  document-start: disable
