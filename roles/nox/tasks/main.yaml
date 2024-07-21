@@ -1,6 +1,7 @@
 - name: Install latest nox with pipx
   community.general.pipx:
     name: nox
+    source: "nox[uv]"
     executable: /usr/local/bin/pipx
     python: |-
       {{ '/usr/bin/python3.11' if ansible_distribution == 'Ubuntu' else omit }}
