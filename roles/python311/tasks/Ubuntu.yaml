@@ -3,7 +3,7 @@
     url: |-
       https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf23c5a6cf475977595c89f51ba6932366a755776
     dest: /etc/apt/keyrings/deadsnakes.asc
-    mode: 0o644
+    mode: "0o644"
   become: true
 - name: Deadsnakes repository
   ansible.builtin.apt_repository:
