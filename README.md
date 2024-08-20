@@ -66,6 +66,9 @@ incus launch images:fedora/40/cloud c1 \
     all
 ```
 
+For Python 3.12 add `--extra-vars=python_version=3.12`, similarly to the Ubuntu
+example below.
+
 #### pipx
 
 <!-- embedme .README.md-files/fedora-pipx.sh -->
