@@ -50,5 +50,5 @@
 - name: Run handlers
   ansible.builtin.meta: flush_handlers
 - name: Install Python
-  ansible.builtin.apt: { name: python3.11-venv }
+  ansible.builtin.apt: { name: "python{{ python311_version }}-venv" }
   become: true
