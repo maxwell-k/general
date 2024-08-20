@@ -17,6 +17,9 @@ jobs:
       - run: . .README.md-files/ubuntu-python311.sh
       - run: lxc exec c1 -- python3.11 --version
       - run: lxc delete --force c1
+      - run: . .README.md-files/ubuntu-python312.sh
+      - run: lxc exec c1 -- python3.12 --version
+      - run: lxc delete --force c1
       - run: . .README.md-files/ubuntu-pipx.sh
       - run: lxc exec c1 -- pipx --version
       - run: lxc delete --force c1
