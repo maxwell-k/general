@@ -4,5 +4,5 @@ incus launch images:fedora/40/cloud c1 \
     --inventory=c1, \
     --connection=community.general.incus \
     --module-name=include_role \
-    --args=name=maxwellk.general.python311 \
+    --args=name=maxwellk.general.python \
     all

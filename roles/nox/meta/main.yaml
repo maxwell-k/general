@@ -1,3 +1,5 @@
 dependencies:
-  - role: maxwellk.general.python311
+  - role: maxwellk.general.python
+    vars:
+      python_version: "3.11"
   - role: maxwellk.general.pipx

@@ -4,5 +4,5 @@ lxc launch ubuntu:22.04 c1 \
     --inventory=c1, \
     --connection=community.general.lxd \
     --module-name=include_role \
-    --args=name=maxwellk.general.python311 \
+    --args=name=maxwellk.general.python \
     all

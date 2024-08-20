@@ -37,11 +37,11 @@ Each section includes a command to launch a new LXD container and apply a role.
 <!-- toc -->
 
 - [Fedora 40](#fedora-40)
-  - [python311](#python311)
+  - [python](#python)
   - [pipx](#pipx)
   - [nox](#nox)
 - [Ubuntu 22.04](#ubuntu-2204)
-  - [python311](#python311-1)
+  - [python](#python-1)
   - [pipx](#pipx-1)
   - [nox](#nox-1)
 
@@ -49,7 +49,9 @@ Each section includes a command to launch a new LXD container and apply a role.
 
 ### Fedora 40
 
-#### python311
+#### python
+
+Python 3.11 by default:
 
 <!-- embedme .README.md-files/fedora-python311.sh -->
 
@@ -60,7 +62,7 @@ incus launch images:fedora/40/cloud c1 \
     --inventory=c1, \
     --connection=community.general.incus \
     --module-name=include_role \
-    --args=name=maxwellk.general.python311 \
+    --args=name=maxwellk.general.python \
     all
 ```
 
@@ -96,7 +98,9 @@ incus launch images:fedora/40/cloud c1 \
 
 ### Ubuntu 22.04
 
-#### python311
+#### python
+
+Python 3.11 by default:
 
 <!-- embedme .README.md-files/ubuntu-python311.sh -->
 
@@ -107,7 +111,7 @@ lxc launch ubuntu:22.04 c1 \
     --inventory=c1, \
     --connection=community.general.lxd \
     --module-name=include_role \
-    --args=name=maxwellk.general.python311 \
+    --args=name=maxwellk.general.python \
     all
 ```
 
