@@ -20,9 +20,9 @@ ansible-galaxy collection install "git+file://$PWD"
 ```
 
 Originally this collection used LXD, however [in 2024] LXD lost access to images
-from the Linux Containers project including Fedora. Instead the collection uses a
-combination of [Incus] and LXD. To work with Incus, it may be necessary to upgrade
-to a more recent version of the `community.general` collection:
+from the Linux Containers project including Fedora. Instead the collection uses
+a combination of [Incus] and LXD. To work with Incus, it may be necessary to
+upgrade to a more recent version of the `community.general` collection:
 
     ansible-galaxy collection install community.general --upgrade
 
